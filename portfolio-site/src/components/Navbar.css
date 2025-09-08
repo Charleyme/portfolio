@@ -1,0 +1,9 @@
+.active-link {
+  font-weight: bold;
+  color: "green"; /* Chakra's blue.500 */
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+}
+

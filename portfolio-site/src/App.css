@@ -1,0 +1,10 @@
+body{
+    background-color: black;
+}
+.house{
+     background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./assets/img12.jpg");
+    background-position: bottom;
+    background-size: cover;
+    margin-top: -20px;
+}
