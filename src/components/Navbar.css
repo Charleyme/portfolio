@@ -1,0 +1,78 @@
+/* Base link */
+.nav-link {
+  position: relative;
+  color: #ccc; /* greyish white before scroll */
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+  padding-bottom: 4px; /* space for underline */
+}
+
+/* Hover before scroll */
+.nav-link:hover {
+  color: white;
+}
+
+/* After scroll: default black */
+.nav-link.scrolled {
+  color: black;
+}
+
+/* Hover after scroll */
+.nav-link.scrolled:hover {
+  color: green;
+}
+
+/* Active link before scroll (default green, except home) */
+.nav-link.active {
+  color: green !important;
+  font-weight: bold;
+}
+
+/* Home link special case: stays white when active before scroll */
+.home-link.active {
+  color: white !important;
+}
+
+/* Active after scroll: green */
+.nav-link.scrolled.active {
+  color: green !important;
+  font-weight: bold;
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: currentColor; /* underline matches text color */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Show underline on hover or active */
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+.logo-image {
+   cursor: "pointer";
+   height:"90px";
+  
+
+}
+@media screen and (min-width: 1024px) {
+  .navbar{
+     padding-right: 90px !important;
+
+  }
+  
+}
+@media screen and (min-width: 1050px) {
+  .navbar{
+     padding-right: 119px !important;
+
+  }
+  
+}

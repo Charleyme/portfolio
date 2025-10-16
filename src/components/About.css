@@ -1,0 +1,11 @@
+.baby{
+     background-color: yellow !important;
+     padding-left:25px;
+}
+
+@media screen and (max-width:1024px) {
+     .image{
+          height:82vh !important;
+     }
+     
+}
