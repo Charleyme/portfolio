@@ -52,9 +52,9 @@ const Navbar = ({ listItems, logo, logo3 }: NavbarProps) => {
       top={showNavbar ? "0" : "-80px"}
       left="0"
       right="0"
-      // pr={{ base:4,sm: 10, md:10,lg:"70px" , xl: "100px"}}
-      // pl={{ base:4,sm:10, md: 10, lg: 0}}
-      px={{xl:-1}}
+      pr={{ base:4,sm: 10, md:10,lg:"70px" , xl: "100px"}}
+      pl={{ base:4,sm:10, md: 10, lg: 0}}
+      
       
 
    
