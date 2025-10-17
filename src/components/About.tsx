@@ -13,8 +13,9 @@ import {
 import { FaReact, FaNodeJs, FaDatabase, FaGithub } from "react-icons/fa";
 import { SiTypescript, SiMongodb } from "react-icons/si";
 import Reveal from "./Reveal";
-import MotionBox from "./Reveal";
+// import MotionBox from "./Reveal";
 import "./About.css";
+
 
 const About = () => {
   return (
@@ -36,8 +37,8 @@ const About = () => {
         pt={20}
       >
         {/* LEFT - Image */}
-        <Reveal direction="left">
-          <MotionBox>
+
+          <Reveal direction="left" stagger> 
             <Box
               w={{ base: "100%", md: "100%",lg:"110%", xl: "110%" }}
               h={{ base:"60vh" , sm:"62vh", md: "75vh", lg: "96vh", xl: "135vh" }}
@@ -50,13 +51,14 @@ const About = () => {
               shadow="lg"
               className="image"
             />
-          </MotionBox>
-        </Reveal>
+            </Reveal>
+        
+        
 
         {/* RIGHT - About Me Text & Skills */}
 
         {/* RIGHT - About Me Text & Skills */}
-        <Reveal direction="right">
+         <Reveal direction="right" stagger>
           <Box
             ml={{ base: 0, md: 0, lg: 7, xl: 7 }}
             p={{ base: 0, md: 0, lg: 10, xl: 10 }}
@@ -150,7 +152,8 @@ const About = () => {
               </Flex>
             </Box>
           </Box>
-        </Reveal>
+          </Reveal>
+    
       </Box>
     </Box>
   );

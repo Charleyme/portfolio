@@ -63,7 +63,7 @@ const Services: React.FC = () => {
 
   return (
     <Box id="services" mb={50} width={"100%"}  p={{ base: "22px",  sm:"45px", md: 12 ,lg:10, xl:20}} >
-      <Reveal direction="up">
+      <Reveal direction="up" stagger>
         <Heading textAlign="center" mb={10} color={textColor}>
           My Services
         </Heading>
@@ -85,7 +85,7 @@ const Services: React.FC = () => {
           const glow = `${service.colorHex}33`;
 
           return (
-            <Reveal key={i} direction="up" delay={i * 0.18}>
+            <Reveal key={i} direction="up" delay={i * 0.18} stagger>
               <MotionBox
                 p={6}
                 bg={cardBg}

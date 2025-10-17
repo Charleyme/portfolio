@@ -5,7 +5,7 @@ import About from "./components/About";
 import "./App.css";
 import Portfolio from "./components/Portfolio";
 import { Box } from "@chakra-ui/react";
-import Services from "./components/Services";
+import Services from "./components/Services"; 
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -39,16 +39,16 @@ const App = () => {
       <Box id="about">
         <About />
       </Box>
-      <Box id="projects">
+       <Box id="projects">
         <Portfolio />
-      </Box>
+      </Box> 
       <Box id="services">
         <Services />
       </Box>
-      <Box id="contact">
+       <Box id="contact">
         <Contact onSubmit={(data) => console.log(data)} />
-      </Box>
-      <Footer/>
+      </Box> 
+       <Footer/>
     </>
   );
 };

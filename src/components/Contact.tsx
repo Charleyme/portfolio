@@ -20,7 +20,6 @@ import {
   FaEnvelope,
   FaWhatsapp,
 } from "react-icons/fa6";
-import { MotionBox } from "./Reveal";
 import Reveal from "./Reveal";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -55,14 +54,14 @@ const Contact = ({ onSubmit }: ContactProps) => {
   });
   return (
     <Box minH="100vh" p={{base:"22px", sm:"45px", md:'45px', lg: 10, xl:20}} bg="white">
-      <Reveal direction="up">
+      <Reveal direction="up" stagger>
         <Heading textAlign={"center"} mb={10}>
           Contact Me
         </Heading>
       </Reveal>
 
       <Flex direction={{base: "column", lg:"row" ,xl:"row"}}>
-        <Reveal direction="left">
+        <Reveal direction="left" stagger>
           <Box mb={{base:50, lg:0}}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Flex direction={{base:"column", lg:"row"}}>
@@ -143,7 +142,7 @@ const Contact = ({ onSubmit }: ContactProps) => {
             </form>
           </Box>
         </Reveal>
-        <Reveal direction="right">
+        <Reveal direction="right" stagger>
           <Box ml={{base:0, lg:40}}>
             <FormLabel>Contact info</FormLabel>
             <List>
@@ -156,8 +155,8 @@ const Contact = ({ onSubmit }: ContactProps) => {
               <ListItem mb={5}>
                 <Flex alignItems="center" gap={2}>
                   <FaPhone color="green" />
-                  <Link color={"green"} href="tel:+2349031234567">
-                    +234 903 123 4567
+                  <Link color={"green"} href="tel:+2348160459227">
+                    +234 8160459227
                   </Link>
                 </Flex>
               </ListItem>

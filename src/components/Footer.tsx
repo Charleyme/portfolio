@@ -54,7 +54,7 @@ const Footer = () => {
       position="relative"
     >
       {/* Existing footer content */}
-      <Reveal direction="up">
+      <Reveal direction="up" stagger>
         <Flex
           direction={{ base: "column", md: "row" }}
           align={{ base: "center", md: "flex-start" }}
@@ -144,7 +144,7 @@ const Footer = () => {
         </Flex>
       </Reveal>
 
-      <Reveal direction="up" delay={0.3}>
+      <Reveal direction="up" delay={0.3} stagger>
         <Box
           borderTop="1px solid"
           borderColor={border}
