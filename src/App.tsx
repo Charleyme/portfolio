@@ -37,8 +37,8 @@ const App = () => {
       </Box>
 
       <Box id="about">
-        <About />
-      </Box>
+        <About/>
+      </Box> 
        <Box id="projects">
         <Portfolio />
       </Box> 
