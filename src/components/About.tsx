@@ -22,7 +22,6 @@ const About = () => {
     <Box
       className="parent-section"
       minH="auto"
-      // pl={{ base: 0, md: 0, lg: 0, xl: "8px" }}
       mb={"200px"}
     >
       <Box
@@ -33,12 +32,12 @@ const About = () => {
         justifyContent={{ base: "center", md: "center", lg: "space-between" }}
         alignItems={"center"}
         gap={{ base: 0, md: 0, lg: 12, xl: 14 }}
-        px={{ base: "22px", sm: "45px", md: "45px", lg: "40px", xl: "77px" }}
+        px={{ base: "22px", sm: "45px", md: "45px", lg: "40px", xl: "77px",  }}
         pt={20}
       >
         {/* LEFT - Image */}
 
-          <Reveal direction="left" stagger> 
+          <Reveal direction="left" > 
             <Box
               w={{ base: "100%", md: "100%",lg:"110%", xl: "110%" }}
               h={{ base:"60vh" , sm:"62vh", md: "75vh", lg: "96vh", xl: "135vh" }}
@@ -58,7 +57,7 @@ const About = () => {
         {/* RIGHT - About Me Text & Skills */}
 
         {/* RIGHT - About Me Text & Skills */}
-         <Reveal direction="right" stagger>
+         <Reveal direction="right">
           <Box
             ml={{ base: 0, md: 0, lg: 7, xl: 7 }}
             p={{ base: 0, md: 0, lg: 10, xl: 10 }}

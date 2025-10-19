@@ -62,8 +62,8 @@ const Services: React.FC = () => {
   const textColor = useColorModeValue("gray.800", "gray.100");
 
   return (
-    <Box id="services" mb={50} width={"100%"}  p={{ base: "22px",  sm:"45px", md: 12 ,lg:10, xl:20}} >
-      <Reveal direction="up" stagger>
+    <Box className="about-section" id="services" mb={50} width={"100%"}  p={{ base: "22px",  sm:"45px", md: 12 ,lg:10, xl:20}} >
+      <Reveal direction="up">
         <Heading textAlign="center" mb={10} color={textColor}>
           My Services
         </Heading>
@@ -85,11 +85,12 @@ const Services: React.FC = () => {
           const glow = `${service.colorHex}33`;
 
           return (
-            <Reveal key={i} direction="up" delay={i * 0.18} stagger>
+            <Reveal key={i} direction="up">
               <MotionBox
                 p={6}
                 bg={cardBg}
                 borderRadius="xl"
+                boxShadow="md"
                 shadow="md"
                 textAlign="center"
                 initial={{ opacity: 0, y: 30 }}
@@ -135,7 +136,7 @@ const Services: React.FC = () => {
                   {service.desc}
                 </Text>
               </MotionBox>
-            </Reveal>
+             </Reveal>
           );
         })}
       </Grid>

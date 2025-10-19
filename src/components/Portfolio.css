@@ -1,14 +1,4 @@
-
-
-/* @media screen and (max-width:1030px){
-    .services{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-    }
-    
-} */
- @media screen and (min-width:1024px) {
+@media screen and (min-width:1024px) {
     
      .about-section{
           padding-left: 50px  !important ;

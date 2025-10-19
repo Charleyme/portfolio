@@ -49,11 +49,13 @@ const Navbar = ({ listItems, logo, logo3 }: NavbarProps) => {
     <Box
       as="nav"
       position="fixed"
+      
       top={showNavbar ? "0" : "-80px"}
       left="0"
       right="0"
-      pr={{ base:4,sm: 10, md:10,lg:"70px" , xl: "100px"}}
-      pl={{ base:4,sm:10, md: 10, lg: 0}}
+      // pr={{ base:4,sm: 10, md:10,lg:"70px" , xl: "100px"}}
+      // pl={{ base:4,sm:10, md: 10, lg: 0}}
+      px={{ base: 4, sm: 10, md: 10, lg: 2, xl: 2, "2xl": 40}}
       
       
 
@@ -88,7 +90,7 @@ const Navbar = ({ listItems, logo, logo3 }: NavbarProps) => {
         </ScrollLink>
 
         {/* Desktop Menu */}
-        <Flex display={{ base: "none", md: "none", lg:"flex"}} gap={12}>
+        <Flex display={{ base: "none", md: "none", lg:"flex"}} gap={16}>
           {listItems.map((item, index) => (
             <ScrollLink
               key={index}

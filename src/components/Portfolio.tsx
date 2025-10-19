@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import ProjectCard from "./ProjectsCard";
 import Reveal from "./Reveal";
-
+import "./Portfolio.css"
 const projects = [
   {
     title: "Movie Finder App",
@@ -27,18 +27,20 @@ const projects = [
 const Portfolio = () => {
   return (
     
-    <Box id="projects" p={{base:0}} mb={20} px={{ base: "22px",sm:"45px", md:"45px",lg:"40px", xl:"75px" }} >
-      <Reveal direction="up" stagger>
+    <Box  className="about-section" id="projects" p={{base:0}} mb={20} px={{ base: "22px",sm:"45px", md:"45px",lg:"40px", xl:"75px" }} >
+      <Reveal direction="up">
           <Heading textAlign="center" mb={10}>My Projects</Heading>
       </Reveal>
     
 
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{base: 8, lg:10, xl:10}}>
+
         {projects.map((project, i) => (
-          <Reveal key={i} direction="up" stagger >
-            <ProjectCard {...project} />
+          <Reveal key={i} direction="up">
+            <ProjectCard  {...project} />
           </Reveal>
         ))}
+
       </SimpleGrid>
     </Box>
   );

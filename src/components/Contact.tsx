@@ -53,23 +53,23 @@ const Contact = ({ onSubmit }: ContactProps) => {
     resolver: zodResolver(schema),
   });
   return (
-    <Box minH="100vh" p={{base:"22px", sm:"45px", md:'45px', lg: 10, xl:20}} bg="white">
-      <Reveal direction="up" stagger>
+    <Box className="about-section" minH="100vh" p={{base:4, sm:"40px", md:'40px', lg: 7, xl:16}} bg="white">
+      <Reveal direction="up">
         <Heading textAlign={"center"} mb={10}>
           Contact Me
         </Heading>
       </Reveal>
 
-      <Flex direction={{base: "column", lg:"row" ,xl:"row"}}>
-        <Reveal direction="left" stagger>
-          <Box mb={{base:50, lg:0}}>
+      <Flex direction={{base: "column", lg:"row" ,xl:"row"}} >
+        <Reveal direction="left">
+          <Box mb={{base:50, lg:0}}  p={2}>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Flex direction={{base:"column", lg:"row"}}>
+            
                 <Box>
                   <FormLabel htmlFor="firstname">First name</FormLabel>
                   <Input
                     {...register("firstname")}
-                    width={{base:"100%",md: "100%", lg:"130%", xl:"150%"}}
+                    width={{base:"100%",md: "100%", lg:"120%" ,xl:"97%"}}
                     id="firstname"
                     name="firstname"
                     type="text"
@@ -81,10 +81,10 @@ const Contact = ({ onSubmit }: ContactProps) => {
                     </Text>
                   )}
                 </Box>
-                <Box ml={{base:0, lg: 20, xl:28}}>
+                <Box>
                   <FormLabel htmlFor="lastname  ">Last name</FormLabel>
                   <Input
-                    width={{base:"100%", lg:"148%",xl:"156%"}}
+                    width={{base:"100%", lg:"120%",xl:"97%"}}
                     {...register("lastname")}
                     id="lastname"
                     name="lastname"
@@ -97,12 +97,12 @@ const Contact = ({ onSubmit }: ContactProps) => {
                     </Text>
                   )}
                 </Box>
-              </Flex>
+            
               <FormLabel htmlFor="email" mt={4}>
                 Email address
               </FormLabel>
               <Input
-                  width={{base:"100%", lg:"120%"}}
+                  width={{base:"100%", lg:"120%", xl:"97%"}}
                 {...register("email")}
                 id="email"
                 name="email"
@@ -118,7 +118,7 @@ const Contact = ({ onSubmit }: ContactProps) => {
                 Message
               </FormLabel>
               <Textarea
-                  width={{base:"100%", lg:"120%"}}
+                  width={{base:"100%", lg:"120%", xl:"97%"}}
                 {...register("message")}
                 id="message"
                 name="message"
@@ -142,9 +142,9 @@ const Contact = ({ onSubmit }: ContactProps) => {
             </form>
           </Box>
         </Reveal>
-        <Reveal direction="right" stagger>
-          <Box ml={{base:0, lg:40}}>
-            <FormLabel>Contact info</FormLabel>
+        <Reveal direction="right" >
+          <Box ml={{base:0, lg:40}} p={2}>
+            <FormLabel fontSize={20} mb={10}>Contact info</FormLabel>
             <List>
               <ListItem mb={5}>
                 <Flex alignItems="center" gap={2}>

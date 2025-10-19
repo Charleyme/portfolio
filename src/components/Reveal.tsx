@@ -1,52 +1,53 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface RevealProps {
   children: ReactNode;
   direction?: "left" | "right" | "up" | "down" | "scale";
-  delay?: number;
-  duration?: number;
-  stagger?: boolean; // 👈 new
 }
 
-const Reveal = ({
-  children,
-  direction = "up",
-  delay = 0,
-  duration = 0.6,
-  stagger = false,
-}: RevealProps) => {
-  const variants: Record<string, any> = {
-    up: { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } },
-    down: { hidden: { opacity: 0, y: -30 }, visible: { opacity: 1, y: 0 } },
-    left: { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0 } },
-    right: { hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0 } },
-    scale: { hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1 } },
-  };
+const MotionBox = motion.div;
 
-  const variant = variants[direction];
+const Reveal = ({ children, direction = "up" }: RevealProps) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  // Default animation states
+  let initial: any = { opacity: 0 };
+  let animate: any = { opacity: 1 };
+
+  // Add direction-specific transforms
+  if (direction === "left") {
+    initial.x = -100;
+    animate.x = 0;
+  }
+  if (direction === "right") {
+    initial.x = 100;
+    animate.x = 0;
+  }
+  if (direction === "up") {
+    initial.y = 50;
+    animate.y = 0;
+  }
+  if (direction === "down") {
+    initial.y = -50;
+    animate.y = 0;
+  }
+  if (direction === "scale") {
+    initial.scale = 0.8;
+    animate.scale = 1;
+  }
 
   return (
-    <motion.div
-      variants={variant}
-      initial="hidden"
-      whileInView="visible"
-      transition={{
-        duration,
-        delay,
-        ease: "easeOut",
-        when: stagger ? "beforeChildren" : undefined,
-        staggerChildren: stagger ? 0.15 : undefined, // 👈 smooth sequence
-      }}
-      viewport={{ once: true, amount: 0.2 }}
-      style={{
-        display: "inline-block",
-        width: "100%",
-        overflow: "hidden",
-      }}
+    <MotionBox
+      ref={ref}
+      initial={initial}
+      animate={inView ? animate : initial}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      style={{ width: "100%", height: "100%" }} // ✅ ensures child fills properly
     >
       {children}
-    </motion.div>
+    </MotionBox>
   );
 };
 
