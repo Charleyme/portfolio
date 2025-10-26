@@ -55,25 +55,30 @@ const Contact = () => {
   });
   const onSubmit= async (data: ContactFormData) =>{
     try{
-      await emailjs.send(
-        'service_charles', // replace with your EmailJS service ID
-        'template_nrlz2t8', // replace with your EmailJS template ID 
-        {
-          firstname: data.firstname,
-          lastname: data.lastname,
-          email: data.email,
-          message: data.message,
-        },
-        'pAsATR6SriAM5KSp1' // replace with your EmailJS user ID
-      );
-      toast({
-        title: "Message Sent",
-        description: "Your message has been sent successfully.",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
+      const response = await fetch("https://portfoliobackend-8c3x.onrender.com/api/mail/sendmail", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data),
       });
-      reset();
+      const result = await response.json();
+      if(response.ok){
+        toast({
+          title: "Message Sent",
+          description: "Your message has been sent successfully.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+        reset();
+      }else{
+        toast({
+          title: "Error",
+          description: result.error || "There was an error sending your message.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
     }catch(error){
       toast({
         title: "Error",
@@ -82,10 +87,8 @@ const Contact = () => {
         duration: 5000,
         isClosable: true,
       });
-      console.error("EmailJS Error:", error);
+      console.error("Fetch Error:", error);
     }
-
-
   }
   return (
     <Box className="about-section" minH="100vh" p={{base:4, sm:"40px", md:'40px', lg: 7, xl:16}} bg="white">
