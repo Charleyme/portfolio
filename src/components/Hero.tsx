@@ -3,7 +3,6 @@ import { motion, px } from "framer-motion";
 import React from "react";
 
 interface HeroProps {
-  title: string;
   subtitle: string;
   highlight: string; // keyword/phrase to highlight
 }
@@ -13,7 +12,7 @@ const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 const MotionSpan = motion.span;
 
-const Hero = ({ title, subtitle, highlight }: HeroProps) => {
+const Hero = ({  subtitle, highlight }: HeroProps) => {
   // Split subtitle around the highlight phrase
   const parts = subtitle.split(highlight);
 
@@ -35,7 +34,7 @@ const Hero = ({ title, subtitle, highlight }: HeroProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          {title}
+        
         </MotionHeading>
 
         {/* Subtitle with highlight popping */}

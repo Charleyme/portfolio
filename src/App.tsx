@@ -29,7 +29,6 @@ const App = () => {
         <div className="house">
           <Navbar listItems={NavbarItems} logo={logo} logo3={logo3} />
           <Hero 
-            title="Welcome to My Portfolio"
             subtitle="I'm Charles, a Full-Stack Developer."
             highlight="Full-Stack Developer"
           />
@@ -46,7 +45,7 @@ const App = () => {
         <Services />
       </Box>
        <Box id="contact">
-        <Contact onSubmit={(data) => console.log(data)} />
+        <Contact />
       </Box> 
        <Footer/>
     </>

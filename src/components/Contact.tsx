@@ -12,6 +12,7 @@ import {
   List,
   ListItem,
   Link,
+  useToast,
 } from "@chakra-ui/react";
 import "./Contact.css";
 import {
@@ -24,10 +25,8 @@ import Reveal from "./Reveal";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import emailjs from "emailjs-com";
 
-interface ContactProps {
-  onSubmit: (data: ContactFormData) => void;
-}
 
 const schema = z.object({
   firstname: z
@@ -44,14 +43,50 @@ const schema = z.object({
 
 type ContactFormData = z.infer<typeof schema>;
 
-const Contact = ({ onSubmit }: ContactProps) => {
+const Contact = () => {
+  const toast = useToast();
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(schema),
   });
+  const onSubmit= async (data: ContactFormData) =>{
+    try{
+      await emailjs.send(
+        'service_charles', // replace with your EmailJS service ID
+        'template_nrlz2t8', // replace with your EmailJS template ID 
+        {
+          firstname: data.firstname,
+          lastname: data.lastname,
+          email: data.email,
+          message: data.message,
+        },
+        'pAsATR6SriAM5KSp1' // replace with your EmailJS user ID
+      );
+      toast({
+        title: "Message Sent",
+        description: "Your message has been sent successfully.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+      reset();
+    }catch(error){
+      toast({
+        title: "Error",
+        description: "There was an error sending your message.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      console.error("EmailJS Error:", error);
+    }
+
+
+  }
   return (
     <Box className="about-section" minH="100vh" p={{base:4, sm:"40px", md:'40px', lg: 7, xl:16}} bg="white">
       <Reveal direction="up">
@@ -136,6 +171,8 @@ const Contact = ({ onSubmit }: ContactProps) => {
                 mt={4}
                 colorScheme="green"
                 type="submit"
+                isLoading={isSubmitting}
+                loadingText="Sending..."
               >
                 SEND MESSAGE
               </Button>
