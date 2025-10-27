@@ -25,7 +25,7 @@ import Reveal from "./Reveal";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import emailjs from "emailjs-com";
+import axios from "axios"
 
 
 const schema = z.object({
@@ -55,13 +55,7 @@ const Contact = () => {
   });
   const onSubmit= async (data: ContactFormData) =>{
     try{
-      const response = await fetch("https://portfoliobackend-8c3x.onrender.com/api/mail/sendmail", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(data),
-      });
-      const result = await response.json();
-      if(response.ok){
+      await axios.post("https://portfoliobackend-8c3x.onrender.com/api/mail/sendmail", data);
         toast({
           title: "Message Sent",
           description: "Your message has been sent successfully.",
@@ -70,16 +64,7 @@ const Contact = () => {
           isClosable: true,
         });
         reset();
-      }else{
-        toast({
-          title: "Error",
-          description: result.error || "There was an error sending your message.",
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
-      }
-    }catch(error){
+      }catch(error){
       toast({
         title: "Error",
         description: "There was an error sending your message.",
