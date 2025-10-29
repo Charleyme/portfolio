@@ -37,13 +37,14 @@ const About = () => {
       >
         {/* LEFT - Image */}
 
+        
           <Reveal direction="left" > 
             <Box
               w={{ base: "100%", md: "100%",lg:"110%", xl: "110%" }}
               h={{ base:"60vh" , sm:"62vh", md: "75vh", lg: "96vh", xl: "135vh" }}
               mr={{ base: 0 }}
               mb={{ base: 20, md: 20, lg: 0 }}
-              bgImage="url('avatar2.png')" // ✅ Ensure avatar2.png is inside /public
+              bgImage="https://res.cloudinary.com/dico80rwt/image/upload/f_auto,q_auto/avatar2_v5gfup.png" // ✅ Ensure avatar2.png is inside /public
               bgPosition="center"
               bgSize="cover"
               borderRadius="lg"

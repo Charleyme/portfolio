@@ -4,10 +4,12 @@ body{
 }
 .house{
      background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets/Avatar.png");
+    url("https://res.cloudinary.com/dico80rwt/image/upload/f_auto,q_auto/Avatar_ws4nji.png");
     background-position: 10% 28%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     margin-top: -20px;
+
 }
+

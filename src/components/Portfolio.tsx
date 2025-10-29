@@ -11,7 +11,8 @@ const projects = [
     tech: ["React", "TMDB API", "Chakra UI"],
     demo: "https://demo.com",
     github: "https://github.com/username/movie-finder",
-    image: "img12.jpg",
+    
+    image: "https://res.cloudinary.com/dico80rwt/image/upload/v1761739165/img12_ghnkyg.jpg",
   },
   {
     title: "Todo App",
@@ -19,7 +20,7 @@ const projects = [
     tech: ["React", "TypeScript", "Node.js", "MongoDB"],
     demo: "https://demo.com",
     github: "https://github.com/Charleyme/secrets",
-    image: "img12.jpg",
+    image: "https://res.cloudinary.com/dico80rwt/image/upload/v1761739165/img12_ghnkyg.jpg",
   },
   // more projects
 ];

@@ -236,8 +236,8 @@
 @media screen and (min-width:1700px) {
   
      .about-section{
-         
-
+          padding-left: 260px  !important ;
+          padding-right: 260px !important;
      }
      
 }

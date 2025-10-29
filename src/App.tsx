@@ -9,9 +9,7 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-import logo from "./assets/logo.png";
-import logo2 from "./assets/logo2.png";
-import logo3 from "./assets/logo3.png"
+
 
 const App = () => {
   const NavbarItems = [
@@ -23,11 +21,15 @@ const App = () => {
     { title: "Blog", link: "blog" ,type: "scroll" },
     { title: "Contact", link: "contact",type:"route" },
   ];
+  const avatar = "https://res.cloudinary.com/dico80rwt/image/upload/f_auto,q_auto/logo_bemxyj.png";
+
+
+  const avatar2 =   "https://res.cloudinary.com/dico80rwt/image/upload/f_auto,q_auto/logo3_uxlawu.png"
   return (
     <>
       <Box id="home">
         <div className="house">
-          <Navbar listItems={NavbarItems} logo={logo} logo3={logo3} />
+          <Navbar listItems={NavbarItems} logo= {avatar} logo3={avatar2} />
           <Hero 
             subtitle="I'm Charles, a Full-Stack Developer."
             highlight="Full-Stack Developer"

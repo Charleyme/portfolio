@@ -29,6 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       overflow="hidden"
       _hover={{ transform: "scale(1.03)", shadow: "lg" }}
       transition="0.3s"
+      
       cursor="pointer"
     >
       {/* Image with hover pop-out */}
