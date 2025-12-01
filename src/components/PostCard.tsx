@@ -44,8 +44,9 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           src={post.coverImage}
           alt={post.title}
           objectFit="cover"
+          objectPosition={"center"}
           width="100%"
-          height="160px"
+          height="300px"
         />
       ) : (
         <Box

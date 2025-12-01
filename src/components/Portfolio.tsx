@@ -44,7 +44,7 @@ const Portfolio = () => {
 
   return (
     <Box
-      className="about-section"
+      // className="about-section"
       id="projects"
       mb={20}
       px={{

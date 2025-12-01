@@ -33,6 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       _hover={{ transform: "scale(1.03)", shadow: "lg" }}
       transition="0.3s"
       cursor="pointer"
+      
     >
       {/* 🔥 NEW Badge */}
       {isNew && (
@@ -59,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
         w="100%"
-        h={{ base: "200px", md: "250px" }}
+        h={{ base: "200px", md: "350px" }}
         bgImage={`url(${image})`}
         bgSize="cover"
         bgPosition="center"

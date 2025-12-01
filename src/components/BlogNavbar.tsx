@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Flex,
-  IconButton,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Flex, IconButton, Stack } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+
 import { motion, AnimatePresence } from "framer-motion";
+
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+const MotionBox = motion.div;
 
 interface NavbarItems {
   title: string;
@@ -57,7 +55,8 @@ const BlogNavbar = ({ listItems, logo, logo3 }: NavbarProps) => {
     }
 
     // Home link
-    if (link === "/" && location.pathname === "/") return window.location.hash === "";
+    if (link === "/" && location.pathname === "/")
+      return window.location.hash === "";
 
     return false;
   };
@@ -72,8 +71,7 @@ const BlogNavbar = ({ listItems, logo, logo3 }: NavbarProps) => {
       bg={bgColor}
       color={linkColor}
       zIndex={1000}
-      px={{ base: 4, md: 10, lg: 20 }}
-    
+      px={{ base: 4, sm: 10, md: 10, lg: "40px", xl: "80px" }}
       boxShadow={scrolled ? "md" : "none"}
       transition="all 0.3s ease"
     >
@@ -96,7 +94,9 @@ const BlogNavbar = ({ listItems, logo, logo3 }: NavbarProps) => {
                 key={index}
                 smooth
                 to={item.link}
-                className={`nav-link ${isActiveLink(item.link) ? "active" : ""}`}
+                className={`nav-link ${
+                  isActiveLink(item.link) ? "active" : ""
+                }`}
                 style={{ color: linkColor }}
               >
                 {item.title}
@@ -105,7 +105,9 @@ const BlogNavbar = ({ listItems, logo, logo3 }: NavbarProps) => {
               <RouterLink
                 key={index}
                 to={item.link}
-                className={`nav-link ${isActiveLink(item.link) ? "active" : ""}`}
+                className={`nav-link ${
+                  isActiveLink(item.link) ? "active" : ""
+                }`}
                 style={{ color: linkColor }}
               >
                 {item.title}
@@ -115,14 +117,34 @@ const BlogNavbar = ({ listItems, logo, logo3 }: NavbarProps) => {
         </Flex>
 
         {/* Mobile Menu Button */}
+
         <IconButton
           aria-label="Menu"
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+          variant="ghost"
           display={{ base: "flex", lg: "none" }}
           onClick={toggleMenu}
-          variant="ghost"
-          fontSize={30}
+          fontSize={35}
           color={linkColor}
+          style={{ perspective: "700px" }}
+          icon={
+            <MotionBox
+              key={isOpen ? "close" : "open"}
+              initial={{ rotateY: 0 }}
+              animate={{ rotateY: 360 }} // full turning spin
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transformStyle: "preserve-3d",
+              }}
+            >
+              {isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            </MotionBox>
+          }
         />
       </Flex>
 
@@ -146,7 +168,9 @@ const BlogNavbar = ({ listItems, logo, logo3 }: NavbarProps) => {
                   key={index}
                   smooth
                   to={item.link}
-                  className={`nav-link ${isActiveLink(item.link) ? "active" : ""}`}
+                  className={`nav-link ${
+                    isActiveLink(item.link) ? "active" : ""
+                  }`}
                   onClick={closeMenu}
                   style={{ color: linkColor }}
                 >
@@ -156,7 +180,9 @@ const BlogNavbar = ({ listItems, logo, logo3 }: NavbarProps) => {
                 <RouterLink
                   key={index}
                   to={item.link}
-                  className={`nav-link ${isActiveLink(item.link) ? "active" : ""}`}
+                  className={`nav-link ${
+                    isActiveLink(item.link) ? "active" : ""
+                  }`}
                   onClick={closeMenu}
                   style={{ color: linkColor }}
                 >

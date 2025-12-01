@@ -62,7 +62,7 @@ const Services: React.FC = () => {
   const textColor = useColorModeValue("gray.800", "gray.100");
 
   return (
-    <Box className="about-section" id="services" mb={50} width={"100%"}  p={{ base: "22px",  sm:"45px", md: 12 ,lg:10, xl:20}} >
+    <Box  id="services" mb={50} width={"100%"}  p={{ base: "22px",  sm:"45px", md: 12 ,lg:10, xl:20}} >
       <Reveal direction="up">
         <Heading textAlign="center" mb={10} color={textColor}>
           My Services

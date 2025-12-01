@@ -67,7 +67,7 @@ const BlogTable = ({ posts, refetch, loading }: BlogTableProps) => {
     onClose();
   };
 
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobile = useBreakpointValue({ base: true, lg: false });
 
   if (loading) {
     return (

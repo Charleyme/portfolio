@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion, AnimatePresence } from "framer-motion";
+const MotionBox = motion.div;
 
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -117,13 +118,13 @@ const Navbar = ({ listItems, logo, logo3 }: NavbarProps) => {
       top={showNavbar ? "0" : "-80px"}
       left="0"
       right="0"
-      px={{ base: 4, sm: 10, md: 10, lg: 4, xl: "80px" }}
+      px={{ base: 4, sm: 10, md: 10, lg: "40px", xl: "80px" }}
       transition="top 0.4s ease, background-color 0.4s ease"
       bg={scrolled ? "white" : "transparent"}
       color={scrolled ? "black" : "white"}
       boxShadow={scrolled ? "md" : "none"}
       zIndex={1000}
-      className="navbar"
+      // className="about-section"
     >
       <Flex justify="space-between"align="center">
         {/* LOGO */}
@@ -165,15 +166,37 @@ const Navbar = ({ listItems, logo, logo3 }: NavbarProps) => {
         </Flex>
 
         {/* MOBILE MENU */}
-        <IconButton
-          aria-label="Menu"
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          display={{ base: "flex", lg: "none" }}
-          onClick={isOpen ? onClose : onOpen}
-          variant="ghost"
-          fontSize={35}
-          color={scrolled ? "black" : "white"}
-        />
+    
+
+<IconButton
+  aria-label="Menu"
+  variant="ghost"
+  display={{ base: "flex", lg: "none" }}
+  onClick={isOpen ? onClose : onOpen}
+  fontSize={35}
+  color={scrolled ? "black" : "white"}
+  style={{ perspective: "700px" }}
+  icon={
+    <MotionBox
+      key={isOpen ? "close" : "open"}
+      initial={{ rotateY: 0 }}
+      animate={{ rotateY: 360 }}   // full turning spin
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        transformStyle: "preserve-3d",
+      }}
+    >
+      {isOpen ? <CloseIcon /> : <HamburgerIcon />}
+    </MotionBox>
+  }
+/>
+
       </Flex>
 
       {/* MOBILE DROPDOWN */}

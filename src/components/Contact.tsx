@@ -76,7 +76,7 @@ const Contact = () => {
     }
   }
   return (
-    <Box className="about-section" minH="100vh" p={{base:4, sm:"40px", md:'40px', lg: 7, xl:16}} bg="white">
+    <Box minH="100vh" p={{base:4, sm:"40px", md:'40px', lg: 7, xl:16}} bg="white">
       <Reveal direction="up">
         <Heading textAlign={"center"} mb={10}>
           Contact Me

@@ -107,6 +107,9 @@ const CreatePost = ({ onCreate }: CreatePostProps) => {
         <Button colorScheme="green" onClick={handleSubmit}>
           Publish
         </Button>
+        <Button  colorScheme="blue"   onClick={() =>{  navigate("/admin/dashboard")}}>
+          Back to Dashboard
+        </Button>
       </Stack>
     </Box>
   );

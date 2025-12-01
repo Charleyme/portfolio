@@ -19,6 +19,7 @@ const EditPost = () => {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [coverImage, setImage] = useState("");
 
   // LOAD TOKEN
   const token = localStorage.getItem("adminToken");
@@ -45,6 +46,7 @@ const EditPost = () => {
       .then((res) => {
         setTitle(res.data.title);
         setContent(res.data.content);
+        setImage(res.data.coverImage);
       })
       .catch((err) => {
         console.error(err);
@@ -65,6 +67,7 @@ const EditPost = () => {
         {
           title,
           content,
+          coverImage
         },
         {
           headers: {
@@ -96,16 +99,28 @@ const EditPost = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-
         <Textarea
           placeholder="Content"
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={6}
         />
-
+        <Input
+          placeholder="Image URL"
+          value={coverImage}
+          onChange={(e) => setImage(e.target.value)}
+        />
+        
         <Button colorScheme="green" onClick={save}>
           Save
+        </Button>
+        <Button
+          colorScheme="blue"
+          onClick={() => {
+            navigate("/admin/dashboard");
+          }}
+        >
+          Back to Dashboard
         </Button>
       </Stack>
     </Box>

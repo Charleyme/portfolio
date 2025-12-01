@@ -24,6 +24,7 @@ import { Post } from "./api/usePost";
 import { Box } from "@chakra-ui/react";
 import "./App.css";
 import BlogNavbar from "./components/BlogNavbar";
+import ScrollToHash from "./components/ScrollHashLink";
 
 const App = () => {
   const NavbarItems = [
@@ -49,6 +50,7 @@ const App = () => {
         path="/"
         element={
           <>
+          {/* <ScrollToHash/> */}
             <Box id="home">
               <div className="house">
                 <Navbar listItems={NavbarItems} logo={avatar} logo3={avatar2} />

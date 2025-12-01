@@ -25,7 +25,7 @@ const About = () => {
       mb={"200px"}
     >
       <Box
-        className="about-section"
+        // className="about-section"
         display={"flex"}
         flexDirection={{ base: "column", md: "column", lg: "row" }}
         minH="auto"
@@ -41,7 +41,7 @@ const About = () => {
           <Reveal direction="left" > 
             <Box
               w={{ base: "100%", md: "100%",lg:"110%", xl: "110%" }}
-              h={{ base:"60vh" , sm:"62vh", md: "75vh", lg: "96vh", xl: "135vh" }}
+              h={{ base:"60vh" , sm:"80vh", md: "130vh", lg: "100vh", xl: "135vh" }}
               mr={{ base: 0 }}
               mb={{ base: 20, md: 20, lg: 0 }}
               bgImage="https://res.cloudinary.com/dico80rwt/image/upload/f_auto,q_auto/avatar2_v5gfup.png" // ✅ Ensure avatar2.png is inside /public

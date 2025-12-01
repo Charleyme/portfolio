@@ -80,16 +80,16 @@ const Footer = () => {
             <Link href="#home" _hover={{ color: "green.400" }}>
               Home
             </Link>
-            <Link href="#about" _hover={{ color: "green.400" }}>
+            <Link href="/#about" _hover={{ color: "green.400" }}>
               About
             </Link>
-            <Link href="#projects" _hover={{ color: "green.400" }}>
+            <Link href="/#projects" _hover={{ color: "green.400" }}>
               Projects
             </Link>
-            <Link href="#services" _hover={{ color: "green.400" }}>
+            <Link href="/#services" _hover={{ color: "green.400" }}>
               Services
             </Link>
-            <Link href="#contact" _hover={{ color: "green.400" }}>
+            <Link href="/#contact" _hover={{ color: "green.400" }}>
               Contact
             </Link>
           </VStack>
