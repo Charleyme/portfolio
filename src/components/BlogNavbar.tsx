@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 const MotionBox = motion.div;
+import "./Navbar.css";
 
 interface NavbarItems {
   title: string;

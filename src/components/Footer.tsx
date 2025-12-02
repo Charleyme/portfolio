@@ -77,7 +77,7 @@ const Footer = () => {
             <Text fontWeight="bold" color={heading} mb={2}>
               Quick Links
             </Text>
-            <Link href="#home" _hover={{ color: "green.400" }}>
+            <Link href="/" _hover={{ color: "green.400" }}>
               Home
             </Link>
             <Link href="/#about" _hover={{ color: "green.400" }}>

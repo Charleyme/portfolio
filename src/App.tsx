@@ -50,7 +50,7 @@ const App = () => {
         path="/"
         element={
           <>
-          {/* <ScrollToHash/> */}
+          <ScrollToHash/>
             <Box id="home">
               <div className="house">
                 <Navbar listItems={NavbarItems} logo={avatar} logo3={avatar2} />
